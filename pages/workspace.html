@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pracovné prostredie | Samuel Galbavý</title>
+
+    <meta name="description"
+          content="Interaktívne pracovné prostredie Samuela Galbavého, študenta aplikovanej informatiky.">
+
+    <meta property="og:title"
+          content="Pracovné prostredie | Samuel Galbavý">
+
+    <meta property="og:description"
+          content="Interaktívny pohľad na pracovné prostredie Samuela Galbavého.">
+
+    <meta property="og:image"
+          content="../img/workspace.jpg">
+
+    <link rel="icon"
+          href="../initials.png">
+
+    <link rel="stylesheet"
+          href="../css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+
+            <p class="monogram">SG</p>
+
+            <h1>Samuel Galbavý</h1>
+
+            <p>Študent aplikovanej informatiky.</p>
+
+        </div>
+    </header>
+
+
+    <nav>
+
+        <button class="nav__toggle"
+                type="button"
+                aria-label="Otvoriť navigáciu">
+            ☰
+        </button>
+
+        <ul>
+
+            <li>
+                <a class="nav__link"
+                   href="../index.html">
+                    Profil
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link"
+                   href="cv.html">
+                    Životopis
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link nav__link--active"
+                   href="workspace.html"
+                   aria-current="page">
+                    Pracovné prostredie
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link"
+                   href="schedule.html">
+                    Rozvrh
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link"
+                   href="map.html">
+                    Mapa
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <main>
+
+        <section>
+
+            <h2>Moje pracovné prostredie</h2>
+
+            <p>
+                Toto je moje pracovné prostredie, ktoré používam
+                pri štúdiu, programovaní a práci na školských projektoch.
+                Kliknutím na zvýraznené oblasti obrázka sa môžete
+                dozvedieť viac o jednotlivých častiach môjho pracovného stola.
+            </p>
+
+
+            <div class="workspace">
+
+
+                <input class="workspace__radio"
+                       type="radio"
+                       name="workspace-hotspot"
+                       id="hotspot-laptop"
+                       checked>
+
+                <input class="workspace__radio"
+                       type="radio"
+                       name="workspace-hotspot"
+                       id="hotspot-tablet">
+
+                <input class="workspace__radio"
+                       type="radio"
+                       name="workspace-hotspot"
+                       id="hotspot-bottle">
+
+                <input class="workspace__radio"
+                       type="radio"
+                       name="workspace-hotspot"
+                       id="hotspot-planner">
+
+                <input class="workspace__radio"
+                       type="radio"
+                       name="workspace-hotspot"
+                       id="hotspot-phone">
+
+
+                <div class="workspace__image-wrapper">
+
+                    <img
+                        class="workspace__image"
+                        src="../img/workspace.jpg"
+                        alt="Pracovné prostredie"
+                        width="1536"
+                        height="1024"
+                        loading="lazy"
+                    >
+
+
+                    <label class="workspace__hotspot workspace__hotspot--laptop"
+                           for="hotspot-laptop"
+                           tabindex="0">
+
+                        <span class="visually-hidden">
+                            Notebook
+                        </span>
+
+                    </label>
+
+
+                    <label class="workspace__hotspot workspace__hotspot--tablet"
+                           for="hotspot-tablet"
+                           tabindex="0">
+
+                        <span class="visually-hidden">
+                            Grafický tablet
+                        </span>
+
+                    </label>
+
+
+                    <label class="workspace__hotspot workspace__hotspot--bottle"
+                           for="hotspot-bottle"
+                           tabindex="0">
+
+                        <span class="visually-hidden">
+                            Fľaša
+                        </span>
+
+                    </label>
+
+
+                    <label class="workspace__hotspot workspace__hotspot--planner"
+                           for="hotspot-planner"
+                           tabindex="0">
+
+                        <span class="visually-hidden">
+                            Plánovač
+                        </span>
+
+                    </label>
+
+                    <label class="workspace__hotspot workspace__hotspot--phone"
+                           for="hotspot-phone"
+                           tabindex="0">
+
+                        <span class="visually-hidden">
+                            Telefón
+                        </span>
+
+                    </label>
+
+                </div>
+
+                <div class="workspace__panels">
+
+
+                    <article class="workspace__panel workspace__panel--laptop">
+
+                        <h2>Notebook</h2>
+
+                        <p>
+                            Notebook používam na štúdium a programovanie.
+                        </p>
+
+                    </article>
+
+
+                    <article class="workspace__panel workspace__panel--tablet">
+
+                        <h2>Grafický tablet</h2>
+
+                        <p>
+                            Grafický tablet používam na písanie poznámok.
+                        </p>
+
+                    </article>
+
+
+                    <article class="workspace__panel workspace__panel--bottle">
+
+                        <h2>Fľaša</h2>
+
+                        <p>
+                            Pijem z nej vodu, nič viac.
+                        </p>
+
+                    </article>
+
+
+                    <article class="workspace__panel workspace__panel--planner">
+
+                        <h2>Plánovač</h2>
+
+                        <p>
+                            Plánovač používam na plánovanie zadaní a štúdia na zápočty a skúšky.
+                        </p>
+
+                    </article>
+
+
+                    <article class="workspace__panel workspace__panel--phone">
+
+                        <h2>Telefón</h2>
+
+                        <p>
+                            Telefón používam na scrollovanie tiktoku , keď sa potrebujem odreagovať. 
+                            
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <address>
+            Email:
+            <a href="mailto:nedamsvojemail@nedamho.sk">
+                nedamsvojemail@nedamho.sk
+            </a>
+
+            <br>
+
+            Telefón:
+            <a href="tel:+421234567890">
+                +421 234 567 890
+            </a>
+        </address>
+
+        <p>© 2026 Samuel Galbavý</p>
+
+        <p>
+            Snapchat avatar a pracovné prostredie(obrázky):
+            <a href="https://chatgpt.com/">ChatGPT</a>.
+        </p>
+
+        <p>
+            Mapové podklady:
+            <a href="https://www.openstreetmap.org/copyright">
+                OpenStreetMap
+            </a>.
+        </p>
+
+        <p>
+            Mapová knižnica:
+            <a href="https://leafletjs.com/">
+                Leaflet
+            </a>.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

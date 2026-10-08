@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mapa | Samuel Galbavý</title>
+
+    <meta name="description"
+          content="Interaktívna mapa s miestami Samuela Galbavého.">
+
+    <meta property="og:title" content="Mapa | Samuel Galbavý">
+    <meta property="og:description"
+          content="Interaktívna mapa školy, bydliska a vlastných bodov.">
+    <meta property="og:image" content="../img/me.jpg">
+
+    <link rel="icon" href="../initials.png">
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+    
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <p class="monogram">SG</p>
+            <h1>Samuel Galbavý</h1>
+            <p>Študent aplikovanej informatiky.</p>
+        </div>
+    </header>
+
+    <nav>
+
+        <button class="nav__toggle"
+                type="button"
+                aria-label="Otvoriť navigáciu">
+            ☰
+        </button>
+
+        <ul>
+            <li>
+                <a class="nav__link" href="../index.html">
+                    Profil
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link" href="cv.html">
+                    Životopis
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link" href="workspace.html">
+                    Pracovné prostredie
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link" href="schedule.html">
+                    Rozvrh
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link nav__link--active"
+                   href="map.html"
+                   aria-current="page">
+                    Mapa
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <section>
+
+            <h2>Kde ma nájdete</h2>
+
+            <p>
+                Na mape je vyznačená moja škola a poloha bydliska.
+                Pridanie bodu sa dá uskutočniť kliknutím na mapu.
+            </p>
+
+            <div id="map"></div>
+
+        </section>
+
+        <section>
+
+            <h2>Pridané body</h2>
+
+            <p id="empty-state">
+                Nebol pridaný bod.
+            </p>
+
+            <ul id="points-list"></ul>
+
+        </section>
+
+        <section>
+
+            <h2>Výpočet vzdialenosti</h2>
+
+            <label for="point-select">
+                Vyberte bod:
+            </label>
+
+            <select id="point-select">
+                <option value="">Vyberte bod</option>
+            </select>
+
+            <label for="target-select">
+                Vyberte cieľ:
+            </label>
+
+            <select id="target-select">
+                <option value="school">Škola</option>
+                <option value="home">Domov</option>
+            </select>
+
+            <button id="calculate-distance" type="button">
+                Vypočítať vzdialenosť
+            </button>
+
+            <p id="distance-result"></p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <address>
+            Email:
+            <a href="mailto:nedamsvojemail@nedamho.sk">
+                nedamsvojemail@nedamho.sk
+            </a>
+
+            <br>
+
+            Telefón:
+            <a href="tel:+421234567890">
+                +421 234 567 890
+            </a>
+        </address>
+
+        <p>© 2026 Samuel Galbavý</p>
+
+        <p>
+            Snapchat avatar a pracovné prostredie(obrázky):
+            <a href="https://chatgpt.com/">ChatGPT</a>.
+        </p>
+
+        <p>
+            Mapové podklady:
+            <a href="https://www.openstreetmap.org/copyright">
+                OpenStreetMap
+            </a>.
+        </p>
+
+        <p>
+            Mapová knižnica:
+            <a href="https://leafletjs.com/">
+                Leaflet
+            </a>.
+        </p>
+
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

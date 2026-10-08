@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Rozvrh | Samuel Galbavý</title>
+
+    <meta name="description"
+          content="Týždenný rozvrh Samuela Galbavého, študenta aplikovanej informatiky.">
+
+    <meta property="og:title"
+          content="Rozvrh | Samuel Galbavý">
+
+    <meta property="og:description"
+          content="Týždenný rozvrh prednášok a cvičení Samuela Galbavého.">
+
+    <meta property="og:image"
+          content="../img/me.jpg">
+
+    <link rel="icon"
+          href="../initials.png">
+
+    <link rel="stylesheet"
+          href="../css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <p class="monogram">SG</p>
+
+            <h1>Samuel Galbavý</h1>
+
+            <p>Študent aplikovanej informatiky.</p>
+        </div>
+    </header>
+
+
+    <nav>
+
+        <button class="nav__toggle"
+                type="button"
+                aria-label="Otvoriť navigáciu">
+            ☰
+        </button>
+
+        <ul>
+
+            <li>
+                <a class="nav__link"
+                   href="../index.html">
+                    Profil
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link"
+                   href="cv.html">
+                    Životopis
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link"
+                   href="workspace.html">
+                    Pracovné prostredie
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link nav__link--active"
+                   href="schedule.html"
+                   aria-current="page">
+                    Rozvrh
+                </a>
+            </li>
+
+            <li>
+                <a class="nav__link"
+                   href="map.html">
+                    Mapa
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <main>
+
+        <section>
+
+            <h2>Kedy ma zastihnete</h2>
+
+            <p>
+                Rozvrh zobrazuje moje prednášky a cvičenia
+                počas pracovného týždňa.
+            </p>
+
+
+            <p id="schedule-status">
+                Zisťujem aktuálnu hodinu...
+            </p>
+
+
+            <div class="schedule__filters">
+
+                <button class="schedule__filter schedule__filter--active"
+                        type="button"
+                        data-filter="all">
+                    Všetko
+                </button>
+
+                <button class="schedule__filter"
+                        type="button"
+                        data-filter="lecture">
+                    Prednášky
+                </button>
+
+                <button class="schedule__filter"
+                        type="button"
+                        data-filter="exercise">
+                    Cvičenia
+                </button>
+
+            </div>
+
+
+            <p id="schedule-filter-message"
+               hidden>
+                Pre zvolený filter sa nenašli žiadne hodiny.
+            </p>
+
+            <div class="schedule__table-wrapper">
+
+                <table class="schedule">
+
+                    <thead>
+
+                        <tr>
+                            <th scope="col">Deň</th>
+
+                            <th scope="col">7:00</th>
+                            <th scope="col">8:00</th>
+                            <th scope="col">9:00</th>
+                            <th scope="col">10:00</th>
+                            <th scope="col">11:00</th>
+                            <th scope="col">12:00</th>
+                            <th scope="col">13:00</th>
+                            <th scope="col">14:00</th>
+                            <th scope="col">15:00</th>
+                            <th scope="col">16:00</th>
+                            <th scope="col">17:00</th>
+                            <th scope="col">18:00</th>
+                            <th scope="col">19:00</th>
+                            <th scope="col">20:00</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr data-day="1">
+
+                            <th scope="row">
+                                Pondelok
+                            </th>
+
+                            <td class="schedule__free"
+                                colspan="2">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--exercise"
+                                colspan="2"
+                                data-type="exercise"
+                                data-start="09:00"
+                                data-end="10:50">
+
+                                <strong>
+                                    Webové technológie 1
+                                </strong>
+
+                                <span>
+                                    Cvičenie
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free"
+                                colspan="2">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--exercise"
+                                colspan="2"
+                                data-type="exercise"
+                                data-start="13:00"
+                                data-end="14:50">
+
+                                <strong>
+                                    Operačné systémy
+                                </strong>
+
+                                <span>
+                                    Cvičenie
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--lecture"
+                                colspan="2"
+                                data-type="lecture"
+                                data-start="15:00"
+                                data-end="16:50">
+
+                                <strong>
+                                    Lineárna algebra 2
+                                </strong>
+
+                                <span>
+                                    Prednáška
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free"
+                                colspan="4">
+                            </td>
+
+                        </tr>
+
+                        <tr data-day="2">
+
+                            <th scope="row">
+                                Utorok
+                            </th>
+
+
+                            <td class="schedule__free">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--exercise"
+                                colspan="2"
+                                data-type="exercise"
+                                data-start="08:00"
+                                data-end="09:50">
+
+                                <strong>
+                                    Analýza a zložitosť algoritmov
+                                </strong>
+
+                                <span>
+                                    Cvičenie
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--lecture"
+                                colspan="2"
+                                data-type="lecture"
+                                data-start="10:00"
+                                data-end="11:50">
+
+                                <strong>
+                                    Webové technológie 1
+                                </strong>
+
+                                <span>
+                                    Prednáška
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free"
+                                colspan="3">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--lecture"
+                                colspan="2"
+                                data-type="lecture"
+                                data-start="15:00"
+                                data-end="16:50">
+
+                                <strong>
+                                    Softvérové inžinierstvo
+                                </strong>
+
+                                <span>
+                                    Prednáška
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--exercise"
+                                data-type="exercise"
+                                data-start="17:00"
+                                data-end="17:50">
+
+                                <strong>
+                                    Softvérové inžinierstvo
+                                </strong>
+
+                                <span>
+                                    Cvičenie
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free"
+                                colspan="3">
+                            </td>
+
+                        </tr>
+
+                        <tr data-day="3">
+
+                            <th scope="row">
+                                Streda
+                            </th>
+
+
+                            <td class="schedule__free">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--lecture"
+                                colspan="2"
+                                data-type="lecture"
+                                data-start="08:00"
+                                data-end="09:50">
+
+                                <strong>
+                                    Operačné systémy
+                                </strong>
+
+                                <span>
+                                    Prednáška
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--lecture"
+                                colspan="2"
+                                data-type="lecture"
+                                data-start="10:00"
+                                data-end="11:50">
+
+                                <strong>
+                                    Analýza a zložitosť algoritmov
+                                </strong>
+
+                                <span>
+                                    Prednáška
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--lecture"
+                                colspan="2"
+                                data-type="lecture"
+                                data-start="13:00"
+                                data-end="14:50">
+
+                                <strong>
+                                    Webové technológie 1
+                                </strong>
+
+                                <span>
+                                    Prednáška
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free"
+                                colspan="6">
+                            </td>
+
+                        </tr>
+
+
+                        <tr data-day="4">
+
+                            <th scope="row">Štvrtok</th>
+
+                            <td class="schedule__free" colspan="2"></td>
+
+                            <td class="schedule__lesson schedule__lesson--exercise schedule__lesson--sport"
+                                colspan="2"
+                                data-type="exercise"
+                                data-start="09:00"
+                                data-end="10:50">
+
+                                <strong>Telesná kultúra</strong>
+                                <span>Cvičenie</span>
+
+                            </td>
+
+                            <td class="schedule__lesson schedule__lesson--exercise"
+                                data-type="exercise"
+                                data-start="11:00"
+                                data-end="11:50">
+
+                                <strong>Softvérové inžinierstvo</strong>
+                                <span>Cvičenie</span>
+
+                            </td>
+
+                            <td class="schedule__free" colspan="9"></td>
+
+                        </tr>
+
+                        <tr data-day="5">
+
+                            <th scope="row">
+                                Piatok
+                            </th>
+
+
+                            <td class="schedule__free"
+                                colspan="2">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--exercise"
+                                data-type="exercise"
+                                data-start="09:00"
+                                data-end="09:50">
+
+                                <strong>
+                                    Analýza a zložitosť algoritmov
+                                </strong>
+
+                                <span>
+                                    Cvičenie
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free"
+                                colspan="3">
+                            </td>
+
+
+                            <td class="schedule__lesson schedule__lesson--exercise"
+                                colspan="2"
+                                data-type="exercise"
+                                data-start="13:00"
+                                data-end="14:50">
+
+                                <strong>
+                                    Lineárna algebra 2
+                                </strong>
+
+                                <span>
+                                    Cvičenie
+                                </span>
+
+                            </td>
+
+
+                            <td class="schedule__free"
+                                colspan="6">
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <section class="semester-progress">
+
+                <h2>Priebeh semestra</h2>
+
+                <progress id="semester-progress"
+                          value="0"
+                          max="100">
+                    0 %
+                </progress>
+
+                <p id="semester-progress-text">
+                    Uplynulo 0 % semestra.
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <address>
+            Email:
+            <a href="mailto:nedamsvojemail@nedamho.sk">
+                nedamsvojemail@nedamho.sk
+            </a>
+
+            <br>
+
+            Telefón:
+            <a href="tel:+421234567890">
+                +421 234 567 890
+            </a>
+        </address>
+
+        <p>© 2026 Samuel Galbavý</p>
+
+        <p>  
+            Snapchat avatar a pracovné prostredie(obrázky):
+            <a href="https://chatgpt.com/">ChatGPT</a>.
+        </p>
+
+        <p>
+            Mapové podklady:
+            <a href="https://www.openstreetmap.org/copyright">
+                OpenStreetMap
+            </a>.
+        </p>
+
+        <p>
+            Mapová knižnica:
+            <a href="https://leafletjs.com/">
+                Leaflet
+            </a>.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
