@@ -1,7 +1,7 @@
 Name: Samuel Galbavý
 Course: API
 
-Website: *odkaz na skolsky server*
+Website: https://webte1.fei.stuba.sk/~xgalbavy/Z1_galbavy/
 Website content: Stránka je mojím osobným online profilom. Jej súčasťou je môj životopis, pracovné prostredie, rozvrh
 a interaktívna mapa.
 
