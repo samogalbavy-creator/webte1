@@ -1,9 +1,6 @@
+/*hamburger menu*/
 const navToggle = document.querySelector(".nav__toggle");
 const navList = document.querySelector("nav ul");
-
-/*start and end of semester*/
-const SEMESTER_START = new Date("2026-09-14T00:00:00");
-const SEMESTER_END = new Date("2027-02-13T23:59:59");
 
 if (navToggle && navList) {
     navToggle.addEventListener("click", function () {
@@ -11,10 +8,16 @@ if (navToggle && navList) {
     });
 }
 
+/*start and end of semester*/
+const SEMESTER_START = new Date("2026-09-14T00:00:00");
+const SEMESTER_END = new Date("2027-02-13T23:59:59");
+
+/*map functionality only runnable on map.html*/
 const mapElement = document.getElementById("map");
 
 if (mapElement && typeof L !== "undefined") {
 
+    /*permanent map locations*/
     const SCHOOL = {
         name: "FEI STU",
         lat: 48.151965,
@@ -27,17 +30,13 @@ if (mapElement && typeof L !== "undefined") {
         lng: 17.2066
     };
 
-
-  
-
+    /*leaflet map*/
     const map = L.map("map").setView(
         [48.15, 17.10],
         13
     );
 
-
-   
-
+    /*openstreetmap tiles*/
     L.tileLayer(
         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
@@ -47,9 +46,7 @@ if (mapElement && typeof L !== "undefined") {
         }
     ).addTo(map);
 
-
-
-
+    /*markers for school,home*/
     const schoolMarker = L.marker([
         SCHOOL.lat,
         SCHOOL.lng
@@ -65,9 +62,7 @@ if (mapElement && typeof L !== "undefined") {
         .addTo(map)
         .bindPopup(HOME.name);
 
-
-   
-
+    /*elements from map.html*/
     const emptyState = document.getElementById("empty-state");
     const pointsList = document.getElementById("points-list");
     const pointSelect = document.getElementById("point-select");
@@ -75,9 +70,7 @@ if (mapElement && typeof L !== "undefined") {
     const calculateButton = document.getElementById("calculate-distance");
     const distanceResult = document.getElementById("distance-result");
 
-
-    
-
+   /*saved custom points*/
    let customPoints = [];
 
     try {
@@ -101,14 +94,11 @@ if (mapElement && typeof L !== "undefined") {
         "Nové body môžete pridať kliknutím na mapu.";
     }
 
-
+    /*custom leaflet markers and data*/
     const customMarkers = [];
-
     let connectionLine = null;
 
-
-    
-
+    /*save custom points to LocalStorage*/
     function savePoints() {
         localStorage.setItem(
             "customMapPoints",
@@ -116,9 +106,7 @@ if (mapElement && typeof L !== "undefined") {
         );
     }
 
-
-  
-
+    /*create leaflet marker for custom point*/
     function createMarker(point, index) {
 
         const marker = L.marker([
@@ -135,9 +123,7 @@ if (mapElement && typeof L !== "undefined") {
         customMarkers.push(marker);
     }
 
-
-  
-
+    /*render custom points*/
     function renderPoints() {
 
         pointsList.innerHTML = "";
@@ -158,7 +144,7 @@ if (mapElement && typeof L !== "undefined") {
         emptyState.style.display = "none";
         calculateButton.disabled = false;
 
-
+        /*restore saved markers after page reload*/
         customPoints.forEach(function (point, index) {
 
             const listItem = document.createElement("li");
@@ -206,7 +192,7 @@ if (mapElement && typeof L !== "undefined") {
 
 
     
-
+    /*new point by clicking on map*/
     map.on("click", function (event) {
 
         const pointName = prompt(
@@ -244,7 +230,7 @@ if (mapElement && typeof L !== "undefined") {
         customMarkers[newIndex].openPopup();
     });
 
-    
+    /*haversine formula to calculate distance*/
     function calculateDistance(
         lat1,
         lng1,
@@ -288,7 +274,7 @@ if (mapElement && typeof L !== "undefined") {
     }
 
 
-
+    /*calculate distance button*/
     calculateButton.addEventListener(
         "click",
         function () {
@@ -335,17 +321,13 @@ if (mapElement && typeof L !== "undefined") {
                 "“ je " +
                 distance.toFixed(2) +
                 " km.";
-
-
             
-
+            /*remove previous connection line*/
             if (connectionLine) {
                 map.removeLayer(connectionLine);
             }
-
-
             
-
+            /*new connection line*/
             connectionLine = L.polyline([
                 [
                     selectedPoint.lat,
@@ -356,10 +338,8 @@ if (mapElement && typeof L !== "undefined") {
                     target.lng
                 ]
             ]).addTo(map);
-
-
             
-
+            /*adjust view to show both connected spots on the map*/
             map.fitBounds(
                 connectionLine.getBounds(),
                 {
@@ -400,9 +380,10 @@ if (mapElement && typeof L !== "undefined") {
     );
 }
 
-
+/*runnable only on schedule.html*/
 const scheduleTable = document.querySelector(".schedule");
 
+/*get elements*/
 if (scheduleTable) {
 
     const lessons = Array.from(
@@ -429,6 +410,7 @@ if (scheduleTable) {
         "semester-progress-text"
     );
 
+    /*filter by exercise or lecture*/
     filterButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
@@ -476,12 +458,14 @@ if (scheduleTable) {
                 }
             });
 
+            /*show message instead of empty schedule*/
             const noResults = visibleLessonCount === 0;
             filterMessage.hidden = !noResults;
             scheduleTable.closest(".schedule__table-wrapper").hidden = noResults; 
         });
     });
 
+    /*convert to minutes*/
     function timeToMinutes(time) {
 
         const parts = time.split(":");
@@ -492,7 +476,7 @@ if (scheduleTable) {
         return hours * 60 + minutes;
     }
 
-
+    /*weekday number*/
     function getLessonDay(lesson) {
 
         const row = lesson.closest("tr");
@@ -500,7 +484,7 @@ if (scheduleTable) {
         return Number(row.dataset.day);
     }
 
-
+    /*name of lesson*/
     function getLessonName(lesson) {
 
         const nameElement =
@@ -508,6 +492,7 @@ if (scheduleTable) {
 
         return nameElement.textContent.trim();
     }
+
 
     function updateScheduleStatus() {
 
@@ -526,7 +511,7 @@ if (scheduleTable) {
             );
         });
 
-
+        /*lesson in progress*/
         const currentLesson = lessons.find(
             function (lesson) {
 
@@ -552,7 +537,7 @@ if (scheduleTable) {
             }
         );
 
-
+        /*display current lesson*/
         if (currentLesson) {
 
             currentLesson.classList.add(
@@ -572,7 +557,7 @@ if (scheduleTable) {
             return;
         }
 
-
+        /*how far is each lesson from current time*/
         let nearestLesson = null;
         let nearestDifference = Infinity;
 
@@ -644,6 +629,7 @@ if (scheduleTable) {
         }
     }
 
+    /*semester progress*/
     function updateSemesterProgress() {
 
         const now = new Date();
